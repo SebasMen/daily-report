@@ -27,7 +27,7 @@ client.on("messageCreate", async (message) => {
     console.log("respuesta", respuesta);
     // Envía la respuesta a n8n a través de un webhook
     try {
-      await axios.post(process.env.N8N_WEBHOOK_URL_PROD, { respuesta });
+      await axios.post(process.env.N8N_WEBHOOK_URL, { respuesta });
       console.log("Respuesta enviada a n8n");
     } catch (error) {
       console.error("Error al enviar la respuesta a n8n:", error);
